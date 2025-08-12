@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "SY1WurYKerU=",
+  "success": true,
+  "projectFilePath": "/Users/cadenfrance/Desktop/repos/Rasterizer/Rasterizer/Rasterizer.csproj",
+  "expectedPackageFiles": [
+    "/Users/cadenfrance/.nuget/packages/raylib-cs/7.0.1/raylib-cs.7.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
