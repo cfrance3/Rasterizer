@@ -1,0 +1,10 @@
+#Dotnet build files
+bin/
+obj/
+
+#Visual Studio Code
+*.vs/
+.vscode/
+
+#Output files
+*.png
