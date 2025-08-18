@@ -1,6 +1,5 @@
-using System.Drawing;
 using Rasterizer.Types;
-using Rasterizer.Utils;
+using static Rasterizer.Renderer.Renderer;
 
 
 namespace Rasterizer.Test
@@ -12,24 +11,24 @@ namespace Rasterizer.Test
             const int width = 128;
             const int height = 128;
 
-            float2 point_a = new float2(10, 10);
-            float2 point_b = new float2(10, 10);
-            float2 point_c = new float2(10, 10);
-
             float3[,] image = new float3[width, height];
 
-            for (int y = 0; y < height; y++)
-            {
-                for (int x = 0; x < width; x++)
-                {
-                    float2 point_p = new float2(x, y);
-                    Color c = float2.PointInTriangle(point_a, point_b, point_c, point_p) == true ? Color.Blue : Color.Black;
+            int numTriangles = 3;
+            float2[] points = new float2[numTriangles * 3];
+            float3[] colors = new float3[numTriangles];
 
-                    image[x, y] = new float3(c.R, c.G, c.B);
-                }
+            Random rand = new Random();
+
+            for (int i = 0; i < points.Length; i++)
+            {
+                points[i] = new float2(rand.NextSingle() * width, rand.NextSingle() * height);
             }
 
-            ImageWriter.WriteImageToFile(image, "test.png");
+            for (int i = 0; i < colors.Length; i++)
+            {
+                colors[i] = new float3(rand.NextSingle(), rand.NextSingle(), rand.NextSingle());
+            }
+
         }
 
     }

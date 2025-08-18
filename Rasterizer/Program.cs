@@ -6,7 +6,10 @@ class Program
 {
     static void Main()
     {
-        Test.CreateTestImage();
+        // Test.CreateTestImage();
+
+        Screen screen = new(800, 800);
+        Engine.Run(screen);
 
     }
 }

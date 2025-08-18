@@ -14,23 +14,7 @@ namespace Rasterizer.Types
 
         public static float2 Perpendicular(float2 vec) => new(vec.y, -vec.x);
 
-        //Returns true if p is to the right of the vector ab
-        public static bool PointOnRightSideOfLine(float2 a, float2 b, float2 p)
-        {
-            float2 ap = p - a;
-            float2 ab_Perp = Perpendicular(b - a);
-            return Dot(ap, ab_Perp) > 0;
-        }
 
-        public static bool PointInTriangle(float2 a, float2 b, float2 c, float2 p)
-        {
-            bool AB = PointOnRightSideOfLine(a, b, p);
-            bool BC = PointOnRightSideOfLine(b, c, p);
-            bool CA = PointOnRightSideOfLine(c, a, p);
-
-            return AB == BC && BC == CA;
-
-        }
 
     }
 
